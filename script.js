@@ -1,4 +1,5 @@
 //Note add box section
+let currentcard
 const noteadd = document.querySelector('.Notes-addition')
 const noddaddbox = document.querySelector('.Note-input')
 noteadd.addEventListener('click' , () => {
@@ -26,11 +27,10 @@ closebtn.addEventListener('click' , () => {
 const createbtn = document.querySelector('.create-note')
 createbtn.addEventListener('click' , (event) =>{
     if(createbtn.textContent == "Save"){
-        const textarea = document.querySelector('#textarea')
-        const notearea = document.querySelector('.note-area')
-        notearea.textContent = textarea.value
+        const textarea = document.querySelector("#textarea")
+        currentcard.textContent = textarea.value
+        noddaddbox.style.display = 'none'
         textarea.value = ""
-        noddaddbox.style.display = "none"
         return
     }
     cardcreation(event);
@@ -60,10 +60,6 @@ function cardcreation(event){
     const buttontwo = document.createElement("div")
     buttontwo.classList.add('btn2')
 
-    buttonone.addEventListener('click', (event) => {
-        edit(event , carddiv)
-    })
-
     //deletion of notes
     buttontwo.addEventListener('click' , () => {
         carddiv.style.display = 'none'
@@ -86,6 +82,15 @@ function cardcreation(event){
 
 
     noddaddbox.style.display = 'none'
+
+    buttonone.addEventListener('click', (event) => {
+        const noteheading = document.querySelector('.heading')
+        noddaddbox.style.display = 'block'
+        noteheading.textContent = "Edit Note"
+        createbtn.textContent = "Save"
+        textarea.value = notearea.textContent
+        currentcard = notearea
+    })
 }
 
 //Random color
@@ -98,22 +103,3 @@ function random_color(){
     return color
 }
 
-//Edit function
-
-
-
-function edit(event , carddiv){
-    const heading = document.querySelector('.heading')
-    heading.textContent = "Edit Note"
-    console.log("Edit")
-    if (noddaddbox.style.display == "none"){
-        noddaddbox.style.display = "block"
-        createbtn.textContent = 'Save'
-        const textarea = document.querySelector('#textarea')
-        const notearea = document.querySelector('.note-area')
-        textarea.value = notearea.textContent
-    }
-    // else{
-        
-    // }
-}

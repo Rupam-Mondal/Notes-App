@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(125, 55, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Notes-Section{
+    background-color: white;
+    height: 520px;
+    width: 670px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 25px;
+    position: relative;
+}
+.Notes-addition{
+    box-sizing: border-box;
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
+.addition{
+    height: 210px;
+    width: 180px;
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+    color: rgb(113, 113, 113);
+}
+.addition:hover{
+    background-color: rgb(214, 214, 214);
+}
+
+.Note-input {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

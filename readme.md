@@ -3,7 +3,7 @@
 Welcome to my sticky note taking web app! This app allows you to create and organize your digital sticky notes in a convenient and user-friendly manner.
 
 ## Demo
-- [click here](https://rupam-mondal.github.io/Notes-App/)
+- [click here](https://669d096501711873a2b7cd38--comforting-kheer-8f431b.netlify.app/)
 
 ## Features
 
